@@ -34,6 +34,9 @@ pipeline {
         allure 'allure-cli'
     }
     stages {
+        stage('Clear') {
+            sh "./gradlew clean"
+        }
         stage('Test') {
             steps {
                 echo "${cucumber_tags}"
