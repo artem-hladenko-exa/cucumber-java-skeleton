@@ -22,7 +22,6 @@ pipeline {
     }
 
     environment {
-        RUN_ID = "${tr_suite_id || ""}"
         cucumber_tags = "not @Now"
     }
     tools {
@@ -36,7 +35,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "./gradlew test -DRUN_ID=${env.RUN_ID} -Dcucumber.options=\"--tags (${cucumber_tags})\""
+                echo "./gradlew test -DRUN_ID=${env.tr_suite_id} -Dcucumber.options=\"--tags (${cucumber_tags})\""
             }
         }
     }
