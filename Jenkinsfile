@@ -23,7 +23,6 @@ pipeline {
 
     environment {
         CUCUMBER_TAGS = "${cucumber_tags}"
-        cucumber_tags = "not @Now"
     }
     tools {
         allure 'allure-cli'
@@ -32,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "${cucumber_tags}"
-                sh "./gradlew test -DRUN_ID=\"${env.tr_suite_id || ""}\" -Dcucumber.options=\"--tags (${CUCUMBER_TAGS})\""
+                sh "./gradlew test -DRUN_ID=\"${env.tr_suite_id || "777"}\" -Dcucumber.options=\"--tags (${CUCUMBER_TAGS})\""
             }
         }
     }
