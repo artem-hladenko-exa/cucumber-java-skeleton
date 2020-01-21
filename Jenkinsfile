@@ -1,4 +1,5 @@
 def runTest(def id, def tags) {
+    sh("sudo chmod 777 script.sh")
     sh("./script.sh ${id} ${tags}")
 }
 
