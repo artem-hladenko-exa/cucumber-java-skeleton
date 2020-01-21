@@ -1,5 +1,6 @@
 def runTest(def id, def tags) {
-    sh("./gradlew test -DRUN_ID=\\\"${id}\\\" -Dcucumber.options=\\\"--tags \\\'\\(${tags}\\)\\\'\\\"")
+    String tagsArray = "\\'(${tags})\\'"
+    sh("./gradlew test -DRUN_ID=\\\"${id}\\\" -Dcucumber.options=\\\"--tags ${tagsArray}\\\"")
 }
 
 pipeline {
