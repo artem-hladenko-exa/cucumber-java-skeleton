@@ -1,6 +1,6 @@
 def runTest(def id, def tags) {
     sh("chmod 777 script.sh")
-    sh("./script.sh ${id} ${tags}")
+    sh("./script.sh ${id} '${tags}'")
 }
 
 pipeline {
