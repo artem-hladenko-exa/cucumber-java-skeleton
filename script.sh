@@ -1,0 +1,1 @@
+./gradlew test -DRUN_ID="$1" -Dcucumber.options="--tags '$2'"
