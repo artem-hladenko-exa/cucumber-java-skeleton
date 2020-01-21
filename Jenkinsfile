@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo "${cucumber_tags}"
                 script {
-                    runTest(SUIT_ID, CUCUMBER_TAGS)
+                    runTest(env.SUIT_ID, env.CUCUMBER_TAGS)
                 }
 
             }
