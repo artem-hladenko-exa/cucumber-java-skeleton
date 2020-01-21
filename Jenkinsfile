@@ -35,7 +35,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "./gradlew test -DRUN_ID=\"${tr_suite_id || ""}\" -Dcucumber.options=\"--tags (${cucumber_tags})\""
+                ehco "${cucumber_tags}"
+                sh "./gradlew test -DRUN_ID=\"${tr_suite_id || ""}\" -Dcucumber.options=\"--tags (${cucumber_tags})\""
             }
         }
     }
