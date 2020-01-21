@@ -7,6 +7,8 @@ project.ext {
 dependencies {
     testImplementation 'io.cucumber:cucumber-java:' + cucumberVersion
     testImplementation 'io.cucumber:cucumber-junit:' + cucumberVersion
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.3.1'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 }
 
 repositories {
