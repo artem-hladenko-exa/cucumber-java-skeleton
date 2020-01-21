@@ -15,8 +15,6 @@ pipeline {
                 causeString: 'Triggered by $creator',
                 printContributedVariables: true,
                 printPostContent: true,
-                regexpFilterText: '$branch',
-                regexpFilterExpression: "${BRANCH_NAME}",
                 silentResponse: false,
                 token: 'test-auto'
         )
