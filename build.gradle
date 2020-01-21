@@ -12,3 +12,8 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
