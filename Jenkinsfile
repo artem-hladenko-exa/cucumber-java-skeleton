@@ -1,3 +1,7 @@
+def runTest(def id, def tags) {
+    sh("./gradlew test -DRUN_ID=\\\"${id}\\\" -Dcucumber.options=\\\"--tags (${tags})\\\"")
+}
+
 pipeline {
     agent any
     triggers {
@@ -33,8 +37,7 @@ pipeline {
             steps {
                 echo "${cucumber_tags}"
                 script {
-                    String exec = "./gradlew test -DRUN_ID=\"${SUIT_ID}\" -Dcucumber.options=\"--tags (${CUCUMBER_TAGS})\""
-                    sh "${exec}"
+                    runTest(SUIT_ID, CUCUMBER_TAGS)
                 }
 
             }
