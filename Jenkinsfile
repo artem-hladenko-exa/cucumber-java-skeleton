@@ -1,7 +1,14 @@
 def runTest(def id, def tags) {
     String tagsArray = "\\\'\\(${tags}\\)\\\'"
+    String sh = "./gradlew test"
+    if (id) {
+        sh += "-DRUN_ID=\\\\\\\"${id}\\\\\\\" "
+    }
 
-    sh("./gradlew test -DRUN_ID=\\\"${id}\\\" ${tags ? "-Dcucumber.options=\"--tags '${tagsArray}'\"" : ""}")
+    if (tags != null) {
+        sh += "-Dcucumber.options=\"--tags '${tagsArray}'\""
+    }
+    sh("${sh}")
 }
 
 pipeline {
