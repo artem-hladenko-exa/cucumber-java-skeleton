@@ -40,11 +40,11 @@ pipeline {
             steps {
                 echo "./gradlew -Drun.id=${RUN_ID} -Dcucumber.options=\"--tags (${cucumber_tags})\" test"
             }
-            post {
-                always {
-
-                }
-            }
+        }
+    }
+    post {
+        always {
+            allure results: [[path: '**/build/allure-results']]
         }
     }
 }
