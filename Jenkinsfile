@@ -23,7 +23,7 @@ pipeline {
         // https://JENKINS_URL/generic-webhook-trigger/invoke?token=TOKEN&app_domain=at2&branch=FULL_BRANCH_NAME
     }
 
-    env {
+    environment {
         RUN_ID = "${tr_suite_id || ""}"
         cucumber_tags = "not @Now"
     }
