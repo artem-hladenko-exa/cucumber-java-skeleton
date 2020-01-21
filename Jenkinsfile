@@ -35,7 +35,9 @@ pipeline {
     }
     stages {
         stage('Clear') {
-            sh "./gradlew clean"
+            steps {
+                sh "./gradlew clean"
+            }
         }
         stage('Test') {
             steps {
