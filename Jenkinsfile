@@ -30,7 +30,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                ehco "${cucumber_tags}"
+                echo "${cucumber_tags}"
                 sh "./gradlew test -DRUN_ID=\"${tr_suite_id || ""}\" -Dcucumber.options=\"--tags (${cucumber_tags})\""
             }
         }
