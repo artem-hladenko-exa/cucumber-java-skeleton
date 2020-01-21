@@ -1,5 +1,5 @@
 def runTest(def id, def tags) {
-    String tagsArray = "\\'(${tags})\\'"
+    String tagsArray = "\\\'(${tags})\\\'"
     sh("./gradlew test -DRUN_ID=\\\"${id}\\\" -Dcucumber.options=\\\"--tags ${tagsArray}\\\"")
 }
 
