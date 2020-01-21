@@ -33,7 +33,8 @@ pipeline {
             steps {
                 echo "${cucumber_tags}"
                 script {
-                    sh "./gradlew test -DRUN_ID=\"${SUIT_ID}\" -Dcucumber.options=\"--tags (${CUCUMBER_TAGS})\""
+                    String exec = "./gradlew test -DRUN_ID=\"${SUIT_ID}\" -Dcucumber.options=\"--tags (${CUCUMBER_TAGS})\""
+                    sh "${exec}"
                 }
 
             }
